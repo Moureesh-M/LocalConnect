@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Home, AlertCircle, CheckSquare, BarChart2, Award } from 'lucide-react';
+import { Home, AlertCircle, CheckSquare, BarChart2, CalendarDays, HandHelping } from 'lucide-react';
 
 const Navbar = () => {
   return (
@@ -12,7 +12,8 @@ const Navbar = () => {
           <Link to="/feed" className="nav-item"><Home size={18} /> Feed</Link>
           <Link to="/issues" className="nav-item"><AlertCircle size={18} /> Issues</Link>
           <Link to="/tasks" className="nav-item"><CheckSquare size={18} /> Tasks</Link>
-          <Link to="/leaderboard" className="nav-item"><Award size={18} /> Leaders</Link>
+          <Link to="/events" className="nav-item"><CalendarDays size={18} /> Events</Link>
+          <Link to="/help-requests" className="nav-item"><HandHelping size={18} /> Help</Link>
         </div>
       </div>
     </nav>

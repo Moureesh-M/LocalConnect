@@ -21,11 +21,50 @@ async function main() {
     ],
   });
 
-  // Tasks (Misaligned features)
+  // Tasks
   await prisma.task.createMany({
     data: [
       { title: 'Clean neighborhood park', assignedTo: 'John Doe', status: 'PENDING' },
       { title: 'Organize community meeting', assignedTo: 'Jane Smith', status: 'COMPLETED' },
+    ],
+  });
+
+  // Events
+  await prisma.event.createMany({
+    data: [
+      {
+        title: 'Weekend Park Cleanup',
+        description: 'Join neighbors to clean the central park and plant flowers.',
+        location: 'Central Park Entrance',
+        eventDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+        rsvpCount: 8,
+      },
+      {
+        title: 'Neighborhood Potluck',
+        description: 'Bring one dish and meet new neighbors.',
+        location: 'Community Hall',
+        eventDate: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000),
+        rsvpCount: 14,
+      },
+    ],
+  });
+
+  // Help Requests
+  await prisma.helpRequest.createMany({
+    data: [
+      {
+        title: 'Need grocery pickup for senior resident',
+        description: 'Pickup needed from local market before evening.',
+        neededBy: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000),
+        status: 'OPEN',
+      },
+      {
+        title: 'Help assembling study desk',
+        description: 'Looking for someone with basic tools for 1 hour.',
+        neededBy: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+        status: 'MATCHED',
+        volunteerName: 'Aisha',
+      },
     ],
   });
 
