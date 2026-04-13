@@ -7,15 +7,27 @@ exports.getMetrics = async (req, res) => {
     const tasksCompleted = await prisma.task.count({
       where: { status: 'COMPLETED' }
     });
-    
-    // Example activity score (simple calculation)
-    const activityScore = totalPosts * 5 + totalIssues * 10 + tasksCompleted * 20;
+    const upcomingEvents = await prisma.event.count({
+      where: {
+        eventDate: {
+          gte: new Date(),
+        },
+      },
+    });
+    const openHelpRequests = await prisma.helpRequest.count({
+      where: {
+        status: {
+          in: ['OPEN', 'MATCHED'],
+        },
+      },
+    });
 
     res.json({
       totalPosts,
       totalIssues,
       tasksCompleted,
-      activityScore
+      upcomingEvents,
+      openHelpRequests
     });
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch metrics' });

@@ -6,7 +6,8 @@ const Dashboard = () => {
     totalPosts: 0,
     totalIssues: 0,
     tasksCompleted: 0,
-    activityScore: 0
+    upcomingEvents: 0,
+    openHelpRequests: 0
   });
 
   useEffect(() => {
@@ -44,8 +45,12 @@ const Dashboard = () => {
             <span className="metric-label">Tasks Completed</span>
           </div>
           <div className="metric-card">
-            <span className="metric-value">{metrics.activityScore}</span>
-            <span className="metric-label">Activity Score</span>
+            <span className="metric-value">{metrics.upcomingEvents}</span>
+            <span className="metric-label">Upcoming Events</span>
+          </div>
+          <div className="metric-card">
+            <span className="metric-value">{metrics.openHelpRequests}</span>
+            <span className="metric-label">Open Help Requests</span>
           </div>
         </div>
       </div>

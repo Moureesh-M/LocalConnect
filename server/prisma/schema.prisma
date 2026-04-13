@@ -1,5 +1,6 @@
 generator client {
   provider = "prisma-client-js"
+  engineType = "binary"
 }
 
 datasource db {
@@ -26,4 +27,24 @@ model Task {
   assignedTo  String
   status      String   @default("PENDING")
   createdAt   DateTime @default(now())
+}
+
+model Event {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  location    String
+  eventDate   DateTime
+  rsvpCount   Int      @default(0)
+  createdAt   DateTime @default(now())
+}
+
+model HelpRequest {
+  id            Int      @id @default(autoincrement())
+  title         String
+  description   String
+  neededBy      DateTime
+  status        String   @default("OPEN")
+  volunteerName String?
+  createdAt     DateTime @default(now())
 }
