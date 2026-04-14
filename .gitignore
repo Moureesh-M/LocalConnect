@@ -1,0 +1,11 @@
+# Global workspace ignores
+node_modules/
+**/node_modules/
+
+# Build outputs
+**/dist/
+
+# Local env files
+.env
+.env.*
+!.env.example
