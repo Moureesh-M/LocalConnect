@@ -125,9 +125,9 @@ These changes improve LocalConnect by:
 
 Deployment requires your cloud account authentication. Placeholder links are provided below for PR completion after deployment:
 
-- Frontend (Vercel/Netlify): https://YOUR-FRONTEND-DEPLOYMENT-URL
-- Backend (Render/Railway): https://YOUR-BACKEND-DEPLOYMENT-URL
-- Database (Neon/Supabase project): https://YOUR-DB-PROJECT-URL
+- Frontend (Vercel/Netlify): https://localconnect1234.netlify.app
+- Backend (Render/Railway): https://localconnect-chla.onrender.com
+- Database (Neon/Supabase project): https://supabase.com/dashboard/project/mdcxgjvhlkwbbtkipcrz
 
 ### Required Environment Variables
 - Frontend (.env):
